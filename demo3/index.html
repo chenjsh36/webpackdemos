@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>钉钉子</title>
+	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+</head>
+<body>
+	<div id="ddz-header" class="topbar">
+		<div class="logo">{{logo}}</div>
+		<div class="pull-right">
+			<div class="operate-item" id="beat">钉</div>
+			<div class="operate-item" id="del">拔</div>
+			<div class="operate-item" id="client-name">{{user}}</div>
+		</div>
+	</div>
+	<div id="ddz-histroy" class="sidebar">
+		<ul>
+			<li v-for="beat in beats">
+				创建时间：{{ beat.cTime}}
+				备注：{{ beat.desc}}
+			</li>
+		</ul>
+		<button v-on:click="addBeat">钉钉子</button>
+		<button v-on:click="rmBeat">拔钉子</button>
+	</div>
+	<child msg="hello"></child>
+	<script>
+
+
+	</script>
+	<script src="index.js"></script>
+</body>
+</html>
