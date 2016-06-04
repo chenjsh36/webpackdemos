@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "builds/";
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -49,16 +49,16 @@
 	    !/* require.ensure */(() => {
 	        const Button = __webpack_require__(1).default;
 	        const button = new Button('google.com');
-	
+
 	        button.render('a');
 	    }(__webpack_require__));
 	}
-	
+
 	// If we have a title, render the Header component on it
 	if (document.querySelectorAll('h1').length) {
 	    !/* require.ensure */(() => {
 	        const Header = __webpack_require__(2).default;
-	
+
 	        new Header().render('h1');
 	    }(__webpack_require__));
 	}
@@ -71,7 +71,7 @@
 	import template from './Button.html';
 	import Mustache from 'mustache';
 	import './Button.scss';
-	
+
 	export default class Button {
 		constructor(link) {
 			this.link = link;
@@ -82,15 +82,15 @@
 		}
 		render(node) {
 			const text = $(node).text();
-	
+
 			$(node).html(
 				Mustache.render(template, {text})
 				);
-	
+
 			$('.button').click(this.onClick.bind(this));
 		}
 	}
-	
+
 
 
 /***/ },
@@ -101,11 +101,11 @@
 	import Mustache from 'mustache';
 	import template from './Header.html';
 	import './Header.scss';
-	
+
 	export default class Header {
 	    render(node) {
 	        const text = $(node).text();
-	
+
 	        $(node).html(
 	            Mustache.render(template, {text})
 	        );

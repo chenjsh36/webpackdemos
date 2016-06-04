@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-var CleanPlugin = require('clean-webpack-plugin'); 
+
 module.exports = {
 	entry: './src',
 	output: {
@@ -26,14 +26,6 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CleanPlugin('builds'),
 
-		new webpack.optimize.CommonsChunkPlugin({
-			// filename: 'vender.js',
-			// name:      'common', // Move dependencies to our main file
-			children:  true, // Look for common dependencies in all children,
-			async : true,
-			minChunks: 2, // How many times a dependency must come up before being extracted
-		}),
 	],
 };
