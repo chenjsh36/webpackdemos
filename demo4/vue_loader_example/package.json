@@ -4,6 +4,7 @@
   "description": "Example using Webpack with vue-loader",
   "main": "index.js",
   "scripts": {
+    "onedev": "webpack --display-chunks --display-modules --config build/webpack.dev.config.js",
     "dev": "webpack-dev-server --inline --hot --config build/webpack.dev.config.js",
     "build": "webpack --progress --hide-modules --config build/webpack.prod.config.js",
     "test": "karma start build/karma.conf.js"

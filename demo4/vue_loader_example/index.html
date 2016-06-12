@@ -5,8 +5,17 @@
     <title>Vue Webpack Example</title>
   </head>
   <body>
-  	what
-	<d-d-app></d-d-app>
+	<div id="app">
+		<!-- <d-d-app></d-d-app> -->
+		<p>hello app</p>
+		<a v-link="{ path: '/foo' }">go to foo</a>
+		<a v-link="{ path: '/bar' }">go to bar</a>
+		<a v-link="{ path: '/ddapp' }">go to ddapp</a>
+		<p>当前路由：  {{$route.path}}</p>
+		<p>当前路由参数：  {{$route.params | json}}</p>
+		<router-view></router-view>
+	</div>
+
     <script src="dist/build.js"></script>
   </body>
 </html>

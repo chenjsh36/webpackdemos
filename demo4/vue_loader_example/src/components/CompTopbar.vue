@@ -4,6 +4,8 @@
 		.logo 钉钉子
 	.pull-right
 		.user-name {{user.name}}
+		a.link(v-link="{ path:'/foo'}") go to foo
+		p 当前路由：{{$route.path}}
 </template>
 
 <script>

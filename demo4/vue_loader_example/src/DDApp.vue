@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import CompTopbar from './components/CompTopbar.vue'
-import CompSidebar from './components/CompSidebar.vue'
+// import CompTopbar from './components/CompTopbar.vue'
+// import CompSidebar from './components/CompSidebar.vue'
 // import CompBeat from './components/CompBeat.vue'
-import $ from 'jquery'
-console.log('jquery:', $('body').text())
-export default {
+// import $ from 'jquery'
+// console.log('jquery:', $('body').text())
+/*export default {
 	data () {
 		return {
 			msg: 'chenjsh',
@@ -26,8 +26,24 @@ export default {
 		CompSidebar,
 		// CompBeat
 	}
-}
-
+}*/
+define(['jquery', './components/CompTopbar.vue', './components/CompSidebar.vue'], function($, CompTopbar, CompSidebar) {
+	return {
+		data () {
+			return {
+				msg: 'chenjsh',
+				user: {
+					name: 'chenjsh36'
+				}
+			}
+		},
+		components: {
+			CompTopbar,
+			CompSidebar,
+			// CompBeat
+		}
+	}
+})
 </script>
 
 <style lang="less">

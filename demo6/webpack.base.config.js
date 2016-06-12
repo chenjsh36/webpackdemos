@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractPlugin = require('extract-text-webpack-plugin');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanPlugin = require('clean-webpack-plugin'); // 第三方插件
 module.exports = {
 	entry: './src',
 	output: {
@@ -46,6 +47,16 @@ module.exports = {
 		],
 	},
 	plugins: [
+
+		// Cleanup the builds/ folder before
+		// compiling our final assets
+		new CleanPlugin('builds'
+			// , {
+			// "root": "[location of webpack.config]", // An absolute path for the root.
+			// "verbose": true, // Write logs to console.
+			// "dry": false, // Do not delete anything, good for testing.
+		// }
+		),
 		new ExtractPlugin('bundle.css'),// <=== where should content be piped
 		new webpack.optimize.CommonsChunkPlugin({
 			// filename: 'vender.js',
